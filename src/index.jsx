@@ -6,6 +6,7 @@ import Article from './pages/Article'
 import About from './pages/About'
 import Header from './components/Header'
 import Error from './components/Error'
+import './assets/styles/style.css';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

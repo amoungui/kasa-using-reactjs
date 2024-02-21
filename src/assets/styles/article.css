@@ -1,0 +1,298 @@
+@charset "UTF-8";
+/* Begin main style  */
+main {
+  margin: 30px;
+  height: 743px;
+  border: 1px;
+  /* Begin article style  */
+  /* End banner style  */
+}
+main .card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  height: 625px;
+  border: 1px;
+  border-radius: 25px;
+}
+main .card #slider-content {
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+  height: 100%;
+}
+main .card .article-banner-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+main .card #prev, main .card #next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
+}
+main .card #prev {
+  left: 10px;
+}
+main .card #next {
+  right: 10px;
+}
+main .card .dots {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #FFFFFF;
+}
+main .card .card-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+main .card .card-content .card-title {
+  width: 635px;
+  height: 51px;
+  top: 608px;
+  left: 100px;
+  color: #FF6060;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 51px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+main .card .card-content .card-subtitle {
+  width: 175px;
+  height: 26px;
+  top: 659px;
+  left: 100px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-top: -35px;
+}
+main .card .card-content .card-host {
+  width: 167px;
+  height: 64px;
+  top: 602px;
+  left: 1170px;
+  margin-top: 25px;
+}
+main .card .card-content .card-host .card-rating {
+  width: 196px;
+  height: 36px;
+  top: 687px;
+  left: 1144px;
+  margin-top: 27px;
+}
+main .card .card-content .card-host .card-rating .fa-star {
+  color: #FF6060;
+}
+main .card .card-content .card-host .card-rating .fa-start-grey {
+  color: #E3E3E3;
+}
+main .card .card-content .card-host .card-host-name {
+  display: flex;
+  justify-content: space-between;
+}
+main .card .card-content .card-host .card-host-name .card-avatar {
+  width: 64px;
+  height: 64px;
+  top: 602px;
+  left: 1273px;
+  background: #C4C4C4;
+  border-radius: 300px 300px 300px 300px;
+  -webkit-border-radius: 300px 300px 300px 300px;
+  -moz-border-radius: 300px 300px 300px 300px;
+}
+main .card .card-content .card-tags {
+  width: 365px;
+  height: 25px;
+  top: 705px;
+  left: 100px;
+  border: 1px;
+}
+main .card .card-content .card-tags .card-tag {
+  width: 115px;
+  height: 25px;
+  top: 705px;
+  left: 350px;
+  border: 1px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #FF6060;
+  padding: 2px 15px 2px 15px;
+  border-radius: 4px;
+}
+main .card .card-accordions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 10px; /* ajustez ceci pour changer l'espace entre les cartes */
+}
+main .card .card-accordions .accordion-button {
+  border-radius: 5px;
+}
+
+/* Le code ci-dessous correspond à la version responsive uniquement */
+/****** Media queries ***********/
+/* Medium devices (tablets, less/equal than 1024px) */
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+  /* Begin main style  */
+  main {
+    margin: 30px;
+    height: 743px;
+    border: 1px;
+    /* Begin article style  */
+    /* End banner style  */
+  }
+  main .card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    height: 700px;
+    border: 1px;
+    border-radius: 25px;
+  }
+  main .card #slider-content {
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    height: 100%;
+  }
+  main .card .article-banner-img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+  }
+  main .card #prev, main .card #next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+  }
+  main .card #prev {
+    left: 10px;
+  }
+  main .card #next {
+    right: 10px;
+  }
+  main .card .dots {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #FFFFFF;
+  }
+  main .card .card-content {
+    display: flex;
+    flex-direction: column;
+  }
+  main .card .card-content .card-title {
+    width: 335px;
+    height: 73px;
+    top: 363.88px;
+    left: 20px;
+    color: #FF6060;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  main .card .card-content .card-subtitle {
+    width: 175px;
+    height: 26px;
+    top: 659px;
+    left: 100px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: -35px;
+  }
+  main .card .card-content .card-host {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  main .card .card-content .card-host .card-rating {
+    display: flex;
+    flex-direction: row;
+  }
+  main .card .card-content .card-host .card-rating .fa-star {
+    color: #FF6060;
+  }
+  main .card .card-content .card-host .card-rating .fa-start-grey {
+    color: #E3E3E3;
+  }
+  main .card .card-content .card-host .card-host-name {
+    display: flex;
+    justify-content: space-between;
+  }
+  main .card .card-content .card-host .card-host-name .card-avatar {
+    width: 64px;
+    height: 64px;
+    top: 602px;
+    left: 1273px;
+    background: #C4C4C4;
+    border-radius: 300px 300px 300px 300px;
+    -webkit-border-radius: 300px 300px 300px 300px;
+    -moz-border-radius: 300px 300px 300px 300px;
+  }
+  main .card .card-content .card-tags {
+    width: 365px;
+    height: 25px;
+    top: 705px;
+    left: 100px;
+    border: 1px;
+  }
+  main .card .card-content .card-tags .card-tag {
+    width: 115px;
+    height: 25px;
+    top: 705px;
+    left: 350px;
+    border: 1px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #FF6060;
+    padding: 2px 15px 2px 15px;
+  }
+  main .card .card-accordions {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px; /* ajustez ceci pour changer l'espace entre les cartes */
+  }
+  main .card .card-accordions .accordion-button {
+    border-radius: 5px;
+  }
+}/*# sourceMappingURL=article.css.map */

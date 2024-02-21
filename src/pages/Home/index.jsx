@@ -1,5 +1,6 @@
 import Card from '../../components/Card'
 
+
 const articles = [
     {
         "id": "c67ab8a7",

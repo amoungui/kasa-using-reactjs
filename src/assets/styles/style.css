@@ -1,0 +1,352 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+}
+
+* a {
+  text-decoration: none;
+}
+
+/* Begin header style  */
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+  height: 68px;
+}
+header .header-logo {
+  width: 210.32px;
+  height: 68px;
+}
+header .menu-nav {
+  display: flex;
+  top: 17px;
+  left: 931px;
+  gap: 57px;
+  justify-content: center;
+  align-items: center;
+}
+header .menu-nav a {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 34.22px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #000000;
+}
+header .menu-nav .active {
+  text-decoration: underline;
+}
+
+/* End header style  */
+/* Begin main style  */
+main {
+  margin: 30px;
+  /* Begin banner style  */
+  /* End banner style  */
+  /* Start section cards style  */
+  /* End section cards style  */
+}
+main .banner {
+  width: 100%;
+  opacity: 0.2px;
+  position: relative;
+  height: 223px;
+  border: 1px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  border-radius: 10px;
+}
+main .banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+main .banner .banner-img {
+  width: 100%;
+  border-radius: 10px;
+  height: 221px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .banner p {
+  width: 733px;
+  height: 68px;
+  top: 14px;
+  left: 180px;
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 68px;
+  letter-spacing: 0em;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  color: #fff;
+  z-index: 1;
+}
+main .logements-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 30px; /* ajustez ceci pour changer l'espace entre les cartes */
+  background: #F6F6F6;
+  margin-top: 30px;
+  padding: 30px;
+}
+main .logements-cards .card {
+  position: relative;
+}
+main .logements-cards .card img {
+  width: 100%;
+  height: 255px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+main .logements-cards .card::before {
+  content: "";
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 255px;
+  background: linear-gradient(180deg, rgba(224, 10, 10, 0.405) 0%, rgba(224, 10, 10, 0.5) 42%, rgba(232, 18, 18, 0.75) 99.99%, rgb(227, 21, 21) 100%);
+}
+main .logements-cards .card .card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+main .logements-cards .card .card-content .card-txt {
+  margin: 10%;
+  color: #fff;
+}
+
+/* End main style  */
+/* Start footer style  */
+.main-container {
+  width: 100%;
+}
+.main-container footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 209px;
+  padding: 66px, 120.31px, 58px, 121.09px;
+  background-color: #000000;
+  color: #fff;
+}
+.main-container footer img {
+  width: 122px;
+  height: 39.44px;
+  top: 66px;
+  left: 127px;
+}
+
+/* End footer style  */
+/* Start style 404 page  */
+/* End style 404 page  */
+/* Le code ci-dessous correspond à la version responsive uniquement */
+/****** Media queries ***********/
+/* Medium devices (tablets, less/equal than 1024px) */
+@media (max-width: 1024px) {
+  /* ici responsive version tablette*/
+  /* Begin main style  */
+  main {
+    margin: 30px;
+    /* Begin banner style  */
+    /* End banner style  */
+  }
+  main .banner {
+    width: 100%;
+  }
+  main .banner p {
+    width: 433px;
+    height: 68px;
+    top: 2px;
+    left: 180px;
+    font-family: Montserrat;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 68px;
+    letter-spacing: 0em;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    color: #fff;
+    z-index: 1;
+  }
+  /* End main style  */
+  /* Start footer style  */
+  .main-container {
+    width: 100%;
+  }
+  .main-container footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 209px;
+    padding: 66px, 120.31px, 58px, 121.09px;
+    background-color: #000000;
+    color: #fff;
+  }
+  .main-container footer img {
+    width: 122px;
+    height: 39.44px;
+    top: 66px;
+    left: 127px;
+  }
+  /* End footer style  */
+}
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+  /* Begin header style  */
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+  }
+  header .header-logo {
+    width: 145px;
+    height: 46.88px;
+  }
+  header .menu-nav {
+    display: flex;
+    gap: 26px;
+    justify-content: center;
+    align-items: center;
+  }
+  header .menu-nav a {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 17.11px;
+    letter-spacing: 0em;
+    text-align: right;
+    color: #000000;
+  }
+  header .menu-nav .active {
+    text-decoration: none;
+  }
+  /* End header style  */
+  /* Begin main style  */
+  main {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    /* Begin banner style  */
+    /* End banner style  */
+    /* Start section cards style  */
+    /* End section cards style  */
+  }
+  main .banner {
+    width: 100%;
+    opacity: 0.2px;
+    position: relative;
+    height: 111px;
+  }
+  main .banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+  }
+  main .banner .banner-img {
+    width: 100%;
+    border-radius: 10px;
+    height: 111px;
+  }
+  main .banner p {
+    width: 220px;
+    height: 48px;
+    top: 10px;
+    left: 16px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    position: absolute;
+    color: #fff;
+    z-index: 1;
+  }
+  main .logements-cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 10px; /* ajustez ceci pour changer l'espace entre les cartes */
+    background: #F6F6F6;
+    padding: 0px;
+  }
+  main .logements-cards .card {
+    position: relative;
+  }
+  main .logements-cards .card img {
+    width: 100%;
+    height: 255px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 10px;
+  }
+  main .logements-cards .card::before {
+    content: "";
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 255px;
+    background: linear-gradient(180deg, rgba(224, 10, 10, 0.405) 0%, rgba(224, 10, 10, 0.5) 42%, rgba(232, 18, 18, 0.75) 99.99%, rgb(227, 21, 21) 100%);
+  }
+  main .logements-cards .card .card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+  main .logements-cards .card .card-content .card-txt {
+    margin: 10%;
+    color: #fff;
+  }
+  /* End main style  */
+  /* Start footer style  */
+  .main-container {
+    width: 100%;
+  }
+  .main-container footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 209px;
+    padding: 66px, 120.31px, 58px, 121.09px;
+    background-color: #000000;
+    color: #fff;
+  }
+  .main-container footer img {
+    width: 122px;
+    height: 39.44px;
+    top: 66px;
+    left: 127px;
+  }
+  /* End footer style  */
+}/*# sourceMappingURL=style.css.map */

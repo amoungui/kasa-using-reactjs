@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.noexist-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    .noexist-page-info {
+        width: 597px;
+        height: 263px;
+        font-family: Montserrat;
+        font-size: 288px;
+        font-weight: 700;
+        line-height: 411px;
+        letter-spacing: 0em;
+        text-align: center;        
+        color: #FF6060;
+        margin-bottom: 20px;
+    }
+
+    .noexist-page-msg{
+        font-family: Montserrat;
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 51px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #FF6060;
+    }
+
+    .noexist-page-link{
+        color: #000000;
+        text-decoration: underline;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .noexist-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        .noexist-page-info {
+            width: 198px; /* Updated width */
+            height: 99px;            
+            font-size: 96px; /* Updated font size */
+            line-height: 137px; /* Updated line height */
+            color: #FF6060;
+            margin-bottom: 20px;
+        }
+    
+        .noexist-page-msg{
+            width: 260px;
+            height: 52px;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 26px;
+            letter-spacing: 0em;
+            text-align: center;
+            color: #FF6060;
+        }
+    
+        .noexist-page-link{
+            width: 221px; /* Updated width */
+            height: 20px; /* Added height */
+            font-size: 14px; /* Updated font size */
+            font-weight: 500;
+            line-height: 20px;
+            letter-spacing: 0em;
+            text-align: left;
+            color: #000000;
+            text-decoration: underline;
+            margin-bottom: 50px;
+        }
+    }    
+}
