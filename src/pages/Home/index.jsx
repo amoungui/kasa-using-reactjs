@@ -624,8 +624,8 @@ const articles = [
 function App() {
     return (
         <main>
-            <div class="banner">
-                <img class="banner-img" src={process.env.PUBLIC_URL + 'assets/img/banner-img.jpg'} alt="Banner kasa"/>
+            <div className="banner">
+                <img className="banner-img" src={process.env.PUBLIC_URL + 'assets/img/banner-img.jpg'} alt="Banner kasa"/>
                 <p>Chez vous, partout et ailleurs</p>
             </div>
             <section className="logements-cards">

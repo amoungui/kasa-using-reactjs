@@ -1,4 +1,12 @@
+import { useEffect } from 'react'
 function About() {
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = process.env.PUBLIC_URL + '/assets/js/script.js';
+        script.async = true;
+        script.defer = true;
+        document.body.appendChild(script);
+      }, []);
     return (
         <main className="about-main-container">
             <div id="apropos-banner" className="banner">
@@ -7,9 +15,7 @@ function About() {
             <div className="apropos-cards">
                 <div className="cards">
                     <div className="accordion fiabilite-accordion">
-                        <button className="accordion-button">
-                            Fiabilité <i className="fa-solid fa-chevron-up"></i>
-                        </button>
+                        <button className="accordion-button">Fiabilité <i className="fa-solid fa-chevron-up"></i></button>
                         <div className="accordion-content">
                             <ul className="accordion-list">
                                 <li>Climatisation</li>
@@ -23,9 +29,7 @@ function About() {
                         </div>
                     </div>
                     <div className="accordion respect-accordion">
-                        <button className="accordion-button">
-                            Respect <i className="fa-solid fa-chevron-up"></i>
-                        </button>
+                        <button className="accordion-button">Respect <i className="fa-solid fa-chevron-up"></i></button>
                         <div className="accordion-content">
                             <ul className="accordion-list">
                                 <li>Climatisation</li>
@@ -39,9 +43,7 @@ function About() {
                         </div>
                     </div>
                     <div className="accordion service-accordion">
-                        <button className="accordion-button">
-                            Service <i className="fa-solid fa-chevron-up"></i>
-                        </button>
+                        <button className="accordion-button">Service <i className="fa-solid fa-chevron-up"></i></button>
                         <div className="accordion-content">
                             <ul className="accordion-list">
                                 <li>Climatisation</li>
@@ -55,9 +57,7 @@ function About() {
                         </div>
                     </div>
                     <div className="accordion securite-accordion">
-                        <button className="accordion-button">
-                            Sécurité <i className="fa-solid fa-chevron-up"></i>
-                        </button>
+                        <button className="accordion-button">Sécurité <i className="fa-solid fa-chevron-up"></i></button>
                         <div className="accordion-content">
                             <ul className="accordion-list">
                                 <li>Climatisation</li>
@@ -76,4 +76,4 @@ function About() {
     )
 }
 
-export default About
+export default About;
