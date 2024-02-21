@@ -623,17 +623,23 @@ const articles = [
 
 function App() {
     return (
-        <div>
-            <h1>Article 👩‍💻👨‍💻👩‍💻</h1>
-            {articles.map((article, index) => (
-                <Card
-                    key={`${article.id}-${index}`}
-                    label={article.title}
-                    url={article.cover}
-                    title={article.title}
-                />
-            ))}
-        </div>
+        <main>
+            <div class="banner">
+                <img class="banner-img" src={process.env.PUBLIC_URL + 'assets/img/banner-img.jpg'} alt="Banner kasa"/>
+                <p>Chez vous, partout et ailleurs</p>
+            </div>
+            <section className="logements-cards">
+                {articles.map((article, index) => (
+                    <Card
+                        key={`${article.id}-${index}`}
+                        label={article.title}
+                        url={article.cover}
+                        title={article.title}
+                    />
+                ))}
+            </section>
+        </main>
+
     )
 }
 
