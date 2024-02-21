@@ -7,7 +7,10 @@ import About from './pages/About'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Error from './components/Error'
-import './assets/styles/style.css';
+import './assets/styles/style.css'
+import './assets/styles/apropos.css'
+import './assets/styles/404.css'
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
