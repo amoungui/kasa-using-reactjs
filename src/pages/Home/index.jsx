@@ -24,6 +24,7 @@ function App() {
                         label={article.title}
                         url={article.cover}
                         title={article.title}
+                        id={article.id}
                     />
                 ))}
             </section>
