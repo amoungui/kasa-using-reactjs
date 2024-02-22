@@ -1,13 +1,22 @@
 import { useEffect } from 'react'
 function About() {
     useEffect(() => {
-        const script = document.createElement('script');
-        script.src = process.env.PUBLIC_URL + '/assets/js/script.js';
-        script.async = true;
-        script.defer = true;
-        document.body.appendChild(script);
-      }, []
-    );
+    var acc = document.getElementsByClassName("accordion-button");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+        });
+    }
+    }, []);
+    
 
     return (
         <main className="about-main-container">
