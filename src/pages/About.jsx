@@ -1,27 +1,31 @@
 import { useEffect } from 'react'
 function About() {
     useEffect(() => {
-    var acc = document.getElementsByClassName("accordion-button");
-    var i;
-
-    for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-            panel.style.maxHeight = null;
-        } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
+        function handleAccordionClick(event) {
+            if (event.target.matches('.accordion-button')) {
+                event.target.classList.toggle('active');
+                var panel = event.target.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + 'px';
+                }
+            }
         }
-        });
-    }
+
+        document.addEventListener('click', handleAccordionClick);
+
+        // On supprimer le gestionnaire d'événements lorsque le composant est démonté
+        return () => {
+            document.removeEventListener('click', handleAccordionClick);
+        };
     }, []);
-    
+
 
     return (
         <main className="about-main-container">
             <div id="apropos-banner" className="banner">
-                <img className="banner-img" src={process.env.PUBLIC_URL + '/assets/img/kalen-emsley-Bkci_8qcdvQ-unsplash2.jpg'} alt="Banner kasa"/>
+                <img className="banner-img" src={process.env.PUBLIC_URL + '/assets/img/kalen-emsley-Bkci_8qcdvQ-unsplash2.jpg'} alt="Banner kasa" />
             </div>
             <div className="apropos-cards">
                 <div className="cards">
