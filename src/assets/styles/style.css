@@ -130,8 +130,6 @@ main .logements-cards .card .card-content {
 }
 main .logements-cards .card .card-content .card-txt {
   margin: 10%;
-}
-main .logements-cards .card .card-content .card-txt .card-link {
   color: #fff;
 }
 
