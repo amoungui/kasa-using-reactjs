@@ -103,6 +103,7 @@ main .logements-cards {
 }
 main .logements-cards .card {
   position: relative;
+  cursor: pointer;
 }
 main .logements-cards .card img {
   width: 100%;
@@ -129,6 +130,8 @@ main .logements-cards .card .card-content {
 }
 main .logements-cards .card .card-content .card-txt {
   margin: 10%;
+}
+main .logements-cards .card .card-content .card-txt .card-link {
   color: #fff;
 }
 
