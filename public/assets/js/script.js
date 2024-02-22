@@ -13,45 +13,49 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
-
-let imageUrls = [
+var imgUrls = [
   '../assets/img/Background.jpg', 
   '../assets/img/banner-img.jpg', 
   '../assets/img/kalen-emsley-Bkci_8qcdvQ-unsplash2.jpg'
 ]; // Ajoutez vos URL d'images ici
 
-let totalSlides = imageUrls.length;
-let currentSlide = 0;
+// Convertir le tableau en un tableau d'objets
+var imgObjects = imgUrls.map((url, index) => {
+  return {id: index, url: url};
+});
 
-let sliderContent = document.getElementById('slider-content');
+var slidesSize = imgObjects.length;
+var currentSlide = 0;
 
-imageUrls.forEach((url, index) => {
+var sliderContent = document.getElementById('slider-content');
+
+imgObjects.forEach((imgObject) => {
     let img = document.createElement('img');
-    img.src = url;
+    img.src = imgObject.url;
     img.classList.add('article-banner-img');
-    img.style.display = index === 0 ? 'block' : 'none';
-    sliderContent.appendChild(img); // Utilisez appendChild au lieu de insertBefore
+    img.style.display = imgObject.id === 0 ? 'block' : 'none';
+    sliderContent.appendChild(img);
 });
 
 let images = document.querySelectorAll('.article-banner-img');
 
-document.getElementById('current-slide').textContent = `${currentSlide + 1}/${totalSlides}`;
+document.getElementById('current-slide').textContent = `${currentSlide + 1}/${slidesSize}`;
 
 document.getElementById('prev').addEventListener('click', () => {
     images[currentSlide].style.display = 'none';
-    currentSlide = currentSlide - 1 < 0 ? totalSlides - 1 : currentSlide - 1;
+    currentSlide = currentSlide - 1 < 0 ? slidesSize - 1 : currentSlide - 1;
     images[currentSlide].style.display = 'block';
-    document.getElementById('current-slide').textContent = `${currentSlide + 1}/${totalSlides}`;
+    document.getElementById('current-slide').textContent = `${currentSlide + 1}/${slidesSize}`;
 });
 
 document.getElementById('next').addEventListener('click', () => {
     images[currentSlide].style.display = 'none';
-    currentSlide = (currentSlide + 1) % totalSlides;
+    currentSlide = (currentSlide + 1) % slidesSize;
     images[currentSlide].style.display = 'block';
-    document.getElementById('current-slide').textContent = `${currentSlide + 1}/${totalSlides}`;
+    document.getElementById('current-slide').textContent = `${currentSlide + 1}/${slidesSize}`;
 });
 
-if (totalSlides === 1) {
+if (slidesSize === 1) {
     document.getElementById('prev').style.display = 'none';
     document.getElementById('next').style.display = 'none';
 }
