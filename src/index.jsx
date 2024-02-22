@@ -9,6 +9,7 @@ import Footer from './components/Footer'
 import Error from './components/Error'
 import './assets/styles/style.css'
 import './assets/styles/apropos.css'
+import './assets/styles/article.css'
 import './assets/styles/404.css'
 
 

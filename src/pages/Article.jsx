@@ -63,7 +63,7 @@ function Article() {
     if (!article) return 'Loading...';
 
     return (
-        <main>
+        <main id="main">
             <article className="card">
                 <div id="slider-content">
                     <div className="dots">

@@ -1,5 +1,5 @@
 /* Begin main style  */
-main{
+#main{
     margin: 30px;
     height: 743px;
     border: 1px;
@@ -137,6 +137,7 @@ main{
                     background-color: #FF6060;
                     padding: 2px 15px 2px 15px;
                     border-radius: 4px;
+                    margin: 3px;
                 }
             }
         }
@@ -165,7 +166,7 @@ main{
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
 /* Begin main style  */
-main{
+#main{
     margin: 30px;
     height: 743px;
     border: 1px;
