@@ -6,7 +6,9 @@ function About() {
         script.async = true;
         script.defer = true;
         document.body.appendChild(script);
-      }, []);
+      }, []
+    );
+
     return (
         <main className="about-main-container">
             <div id="apropos-banner" className="banner">
