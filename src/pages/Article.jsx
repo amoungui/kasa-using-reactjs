@@ -25,9 +25,7 @@ function Article() {
             var currentSlide = 0;
             
             var sliderContent = document.getElementById('slider-content');
-            console.log(imgObjects)
             imgObjects.forEach((imgObject) => {
-                console.log(imgObject)
                 let img = document.createElement('img');
                 img.src = imgObject.url;
                 img.classList.add('article-banner-img');
