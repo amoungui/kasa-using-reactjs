@@ -1,31 +1,11 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import useMyAccordionEffect from '../utils/useMyAccordionEffect';
 
 function Article() {
     const { articleNumber } = useParams();
     const [article, setArticle] = useState(null);
-
-    useEffect(() => {
-        function handleAccordionClick(event) {
-            if (event.target.matches('.accordion-button')) {
-                event.target.classList.toggle('active');
-                var panel = event.target.nextElementSibling;
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                } else {
-                    panel.style.maxHeight = panel.scrollHeight + 'px';
-                }
-            }
-        }
-
-        document.addEventListener('click', handleAccordionClick);
-
-        // On supprimer le gestionnaire d'événements lorsque le composant est démonté
-        return () => {
-            document.removeEventListener('click', handleAccordionClick);
-        };
-    }, []);
-
+    useMyAccordionEffect();
 
     useEffect(() => {
         fetch(`http://localhost:3000/logements/${articleNumber}`)
