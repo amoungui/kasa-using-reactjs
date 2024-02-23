@@ -6,6 +6,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `json-server --watch logements.json`
+Runs the server (kasa-using-reactjs/server/logements.json) in the development mode at the endpoint: http://localhost:3000/logements
+
 ### `npm start`
 
 Runs the app in the development mode.\
