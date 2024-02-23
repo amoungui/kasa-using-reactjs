@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 function Header() {
     useEffect(()=>{
         let links = Array.from(document.getElementsByClassName('btn-link'));
-        links.forEach(link => {
+        links.forEach((link, index) => {
             link.addEventListener('click', (e) => {
                 // Suppression de la classe active de tous les liens
                 links.forEach((link) => {
@@ -20,7 +20,7 @@ function Header() {
     return (
         <header>
             <Link to="/">
-                <img src={process.env.PUBLIC_URL + '/assets/img/logo-header.jpg'} className="header-logo" alt="Logo kasa"/>
+                <img src={process.env.PUBLIC_URL + '/assets/img/logo-header.jpg'} className="header-logo btn-link" alt="Logo kasa"/>
             </Link>
             <nav className="menu-nav">
                 <Link to="/" className="btn-link btn-home active">Accueil</Link>
