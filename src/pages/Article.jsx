@@ -56,6 +56,7 @@ function Article() {
             if (slidesSize === 1) {
                 document.getElementById('prev').style.display = 'none';
                 document.getElementById('next').style.display = 'none';
+                document.getElementById('current-slide').textContent = ` `;
             }
         }
     }, [article]);
