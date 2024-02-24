@@ -96,6 +96,23 @@ function Article() {
         } 
     }, [article]);    
 
+    useEffect(() => {
+        if (article) {
+            let accordionElements = document.getElementsByClassName('js-equipements-accordion-list');
+            // Vider le contenu de chaque élément avec la classe 'card-tags'
+            Array.from(accordionElements).forEach(Element => {
+                Element.innerHTML = '';
+            });
+            article.equipments.forEach(tag => {
+                let li = document.createElement('li');
+                li.textContent = tag;
+                Array.from(accordionElements).forEach(Element => {
+                    Element.appendChild(li);
+                });
+            })
+        } 
+    }, [article]);    
+
     // Si l'article n'a pas encore été chargé, affichage d'un message de chargement
     if (!article) return 'Loading...';
 
@@ -138,11 +155,7 @@ function Article() {
                             Description <i className="fa-solid fa-chevron-up"></i>
                         </button>
                         <div className="accordion-content">
-                            <ul className="accordion-list">
-                                <li>Climatisation</li>
-                                <li>Wi-Fi</li>
-                                <li>Cuisine</li>
-                            </ul>
+                            {article.description}
                         </div>
                     </div>
                     <div className="accordion equipements-accordion">
@@ -150,10 +163,7 @@ function Article() {
                             Équipements <i className="fa-solid fa-chevron-up"></i>
                         </button>
                         <div className="accordion-content">
-                            <ul className="accordion-list">
-                                <li>Climatisation</li>
-                                <li>Wi-Fi</li>
-                                <li>Cuisine</li>
+                            <ul className="accordion-list js-equipements-accordion-list">        
                             </ul>
                         </div>
                     </div>
