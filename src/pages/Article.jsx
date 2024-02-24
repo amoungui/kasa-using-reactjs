@@ -78,65 +78,97 @@ function Article() {
         }
     }, [article]); // Le tableau de dépendances contient article, donc l'effet sera exécuté à chaque fois que article change
 
+    // Premier useEffect
     useEffect(() => {
+        // Vérification si l'article existe
         if (article) {
+            // Récupération de tous les éléments avec la classe 'card-tags'
             let tagsElements = document.getElementsByClassName('card-tags');
             // Vider le contenu de chaque élément avec la classe 'card-tags'
             Array.from(tagsElements).forEach(tagsElement => {
                 tagsElement.innerHTML = '';
             });
+            // Parcours de chaque tag de l'article
             article.tags.forEach(tag => {
+                // Création d'un nouvel élément span
                 let span = document.createElement('span');
+                // Ajout de la classe 'card-tag' à l'élément span
                 span.className = 'card-tag';
+                // Ajout du texte du tag à l'élément span
                 span.textContent = tag;
+                // Ajout de l'élément span à chaque élément avec la classe 'card-tags'
                 Array.from(tagsElements).forEach(tagsElement => {
                     tagsElement.appendChild(span);
                 });
             })
         } 
+    // Le tableau de dépendances contient 'article', donc l'effet sera exécuté 
+    // à chaque fois que 'article' change
     }, [article]);    
 
+    // Deuxième useEffect
     useEffect(() => {
+        // Vérification si l'article existe
         if (article) {
+            // Récupération de tous les éléments avec la classe 'js-equipements-accordion-list'
             let accordionElements = document.getElementsByClassName('js-equipements-accordion-list');
-            // Vider le contenu de chaque élément avec la classe 'card-tags'
+            // Vider le contenu de chaque élément avec la classe 'js-equipements-accordion-list'
             Array.from(accordionElements).forEach(Element => {
                 Element.innerHTML = '';
             });
+            // Parcours de chaque équipement de l'article
             article.equipments.forEach(tag => {
+                // Création d'un nouvel élément li
                 let li = document.createElement('li');
+                // Ajout du texte de l'équipement à l'élément li
                 li.textContent = tag;
+                // Ajout de l'élément li à chaque élément avec la classe 'js-equipements-accordion-list'
                 Array.from(accordionElements).forEach(Element => {
                     Element.appendChild(li);
                 });
             })
         } 
+    // Le tableau de dépendances contient 'article', donc l'effet sera exécuté 
+    // à chaque fois que 'article' change
     }, [article]);    
 
+    // Troisième useEffect
     useEffect(() => {
+        // Vérification si l'article existe
         if (article) {
+            // Récupération de tous les éléments avec la classe 'card-rating'
             let ratingsElements = document.getElementsByClassName('card-rating');
             // Vider le contenu de chaque élément avec la classe 'card-rating'
             Array.from(ratingsElements).forEach(Element => {
                 Element.innerHTML = '';
             });
+            // Définition du nombre total de notes
             const totalRating = 5;
+            // Récupération de la note de l'article
             let ratings = article.rating;
+            // Parcours de chaque note
             for (let i = 0; i < totalRating; i++){
+                // Création d'un nouvel élément i
                 let tag = document.createElement('i');
+                // Ajout de l'attribut 'aria-hidden' à l'élément i
                 tag.setAttribute("aria-hidden", true);
+                // Si la note est inférieure à la note de l'article, ajout de la classe 'fa-xs fa-solid fa-star' à l'élément i
                 if (i < ratings){
                     tag.className = "fa-xs fa-solid fa-star";
                 } else {
+                    // Sinon, ajout de la classe 'fa-xs fa-solid fa-star fa-start-grey' à l'élément i
                     tag.className = "fa-xs fa-solid fa-star fa-start-grey";
                 }
-                // Ajout de l'élément créé à chaque élément avec la classe 'card-rating'
+                // Ajout de l'élément i à chaque élément avec la classe 'card-rating'
                 Array.from(ratingsElements).forEach(Element => {
                     Element.appendChild(tag.cloneNode(true));
                 });
             }
         } 
+    // Le tableau de dépendances contient 'article', donc l'effet sera exécuté 
+    // à chaque fois que 'article' change
     }, [article]);
+
     
     
 
