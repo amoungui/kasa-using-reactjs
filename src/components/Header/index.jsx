@@ -3,8 +3,12 @@ import { useEffect } from 'react'
 
 function Header() {
     useEffect(()=>{
+        // recuperation de l'ensemble des élèment de class btn-link
+        // convertir l'objet HTMLCollection en tableau js
         let links = Array.from(document.getElementsByClassName('btn-link'));
-        links.forEach((link, index) => {
+        // parcourir le tableau links
+        links.forEach((link) => {
+            // Ecouter l'évenement de click sur chaque élèment link
             link.addEventListener('click', (e) => {
                 // Suppression de la classe active de tous les liens
                 links.forEach((link) => {
