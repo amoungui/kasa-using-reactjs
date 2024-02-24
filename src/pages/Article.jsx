@@ -113,6 +113,33 @@ function Article() {
         } 
     }, [article]);    
 
+    useEffect(() => {
+        if (article) {
+            let ratingsElements = document.getElementsByClassName('card-rating');
+            // Vider le contenu de chaque élément avec la classe 'card-rating'
+            Array.from(ratingsElements).forEach(Element => {
+                Element.innerHTML = '';
+            });
+            const totalRating = 5;
+            let ratings = article.rating;
+            for (let i = 0; i < totalRating; i++){
+                let tag = document.createElement('i');
+                tag.setAttribute("aria-hidden", true);
+                if (i < ratings){
+                    tag.className = "fa-xs fa-solid fa-star";
+                } else {
+                    tag.className = "fa-xs fa-solid fa-star fa-start-grey";
+                }
+                // Ajout de l'élément créé à chaque élément avec la classe 'card-rating'
+                Array.from(ratingsElements).forEach(Element => {
+                    Element.appendChild(tag.cloneNode(true));
+                });
+            }
+        } 
+    }, [article]);
+    
+    
+
     // Si l'article n'a pas encore été chargé, affichage d'un message de chargement
     if (!article) return 'Loading...';
 
@@ -140,12 +167,8 @@ function Article() {
                             <img src={article.host.picture} className="card-avatar" alt={article.host.name}/>
                         </div>
                         <div className="card-rating">
-                            <i className="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-                            <i className="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-                            <i className="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-                            <i className="fa-xs fa-solid fa-star fa-start-grey" aria-hidden="true"></i>
-                            <i className="fa-xs fa-solid fa-star neutral-star fa-start-grey" aria-hidden="true"></i>
-                            <span className="sr-only">Note de 4 sur 5</span>
+
+                            <span className="sr-only">Note de {article.rating} sur 5</span>
                         </div>
                     </div>
                 </div>
