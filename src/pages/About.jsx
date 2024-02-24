@@ -1,7 +1,10 @@
+// Importation de mon hook useEffect personnalisé depuis le repertoire utils
 import useMyAccordionEffect from '../utils/useMyAccordionEffect';
 
 function About() {
+    // appel de ma fonction factorisée
     useMyAccordionEffect()
+    s
     return (
         <main className="about-main-container">
             <div id="apropos-banner" className="banner">
