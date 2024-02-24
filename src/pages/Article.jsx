@@ -78,29 +78,23 @@ function Article() {
         }
     }, [article]); // Le tableau de dépendances contient article, donc l'effet sera exécuté à chaque fois que article change
 
-    // Utilisation du hook useEffect
     useEffect(() => {
-        // Vérification si l'article existe
         if (article) {
-            // Récupération de tous les éléments avec la classe 'card-tags'
             let tagsElements = document.getElementsByClassName('card-tags');
-            // Parcours de chaque tag de l'article
+            // Vider le contenu de chaque élément avec la classe 'card-tags'
+            Array.from(tagsElements).forEach(tagsElement => {
+                tagsElement.innerHTML = '';
+            });
             article.tags.forEach(tag => {
-                // Création d'un nouvel élément span
                 let span = document.createElement('span');
-                // Ajout de la classe 'card-tag' à l'élément span
                 span.className = 'card-tag';
-                // Ajout du texte du tag à l'élément span
                 span.textContent = tag;
-                // Parcours de chaque élément avec la classe 'card-tags'
                 Array.from(tagsElements).forEach(tagsElement => {
-                    // Ajout de l'élément span à l'élément courant
                     tagsElement.appendChild(span);
                 });
             })
         } 
-    // Le tableau de dépendances contient 'article', donc l'effet sera exécuté à chaque fois que 'article' change
-    }, [article]);
+    }, [article]);    
 
     // Si l'article n'a pas encore été chargé, affichage d'un message de chargement
     if (!article) return 'Loading...';
@@ -118,6 +112,7 @@ function Article() {
                 <div className="card-content">
                     <div className="card-txt">
                         <p className="card-title">{article.title}</p>
+                        <span className="separator"></span>
                         <p className="card-subtitle">{article.location}</p>
                         <div className="card-tags">
                         </div>

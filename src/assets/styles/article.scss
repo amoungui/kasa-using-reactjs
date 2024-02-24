@@ -68,6 +68,11 @@
                 line-height: 51px;
                 letter-spacing: 0em;
                 text-align: left;
+                margin-bottom: 0px;
+            }
+            .separator{
+                width: 100%;
+                height: 0px;
             }
             .card-subtitle {
                 width: 275px;
@@ -79,7 +84,7 @@
                 line-height: 26px;
                 letter-spacing: 0em;
                 text-align: left;
-                margin-top: -35px;
+                margin-top: 0px;
             }
             .card-host {
                 width: 167px;
@@ -117,13 +122,14 @@
                 }
             }
             .card-tags {
-                width: 365px;
+                width: 100%;
                 height: 25px;
                 top: 705px;
                 left: 100px;
                 border: 1px;
                 .card-tag {
-                    width: 115px;
+                    display: inline-flex;
+                    max-width: 365px;
                     height: 25px;
                     top: 705px;
                     left: 350px;
@@ -235,8 +241,12 @@
                 letter-spacing: 0em;
                 text-align: left;
             }
+            .separator{
+                width: 100%;
+                height: 25px;
+            }
             .card-subtitle {
-                width: 275px;
+                width: 100%;
                 height: 26px;
                 top: 659px;
                 left: 100px;
@@ -245,7 +255,6 @@
                 line-height: 26px;
                 letter-spacing: 0em;
                 text-align: left;
-                margin-top: -35px;
             }
             .card-host {
                 width: 100%;
@@ -278,16 +287,16 @@
                 }
             }
             .card-tags {
-                width: 365px;
-                height: 25px;
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
                 top: 705px;
                 left: 100px;
                 border: 1px;
+                margin-bottom: 20px;
                 .card-tag {
-                    width: 115px;
+                    display: inline-flex;
                     height: 25px;
-                    top: 705px;
-                    left: 350px;
                     border: 1px;
                     font-size: 14px;
                     font-weight: 700;
@@ -297,7 +306,7 @@
                     color: #FFFFFF;
                     background-color: #FF6060;
                     padding: 2px 15px 2px 15px;
-                }
+                }                
             }
         }
         .card-accordions {

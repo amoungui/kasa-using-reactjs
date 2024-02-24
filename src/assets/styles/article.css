@@ -68,6 +68,11 @@
   line-height: 51px;
   letter-spacing: 0em;
   text-align: left;
+  margin-bottom: 0px;
+}
+#main .card .card-content .separator {
+  width: 100%;
+  height: 0px;
 }
 #main .card .card-content .card-subtitle {
   width: 275px;
@@ -79,7 +84,7 @@
   line-height: 26px;
   letter-spacing: 0em;
   text-align: left;
-  margin-top: -35px;
+  margin-top: 0px;
 }
 #main .card .card-content .card-host {
   width: 167px;
@@ -116,14 +121,15 @@
   -moz-border-radius: 300px 300px 300px 300px;
 }
 #main .card .card-content .card-tags {
-  width: 365px;
+  width: 100%;
   height: 25px;
   top: 705px;
   left: 100px;
   border: 1px;
 }
 #main .card .card-content .card-tags .card-tag {
-  width: 115px;
+  display: inline-flex;
+  max-width: 365px;
   height: 25px;
   top: 705px;
   left: 350px;
@@ -223,8 +229,12 @@
     letter-spacing: 0em;
     text-align: left;
   }
+  #main .card .card-content .separator {
+    width: 100%;
+    height: 25px;
+  }
   #main .card .card-content .card-subtitle {
-    width: 275px;
+    width: 100%;
     height: 26px;
     top: 659px;
     left: 100px;
@@ -233,7 +243,6 @@
     line-height: 26px;
     letter-spacing: 0em;
     text-align: left;
-    margin-top: -35px;
   }
   #main .card .card-content .card-host {
     width: 100%;
@@ -266,17 +275,17 @@
     -moz-border-radius: 300px 300px 300px 300px;
   }
   #main .card .card-content .card-tags {
-    width: 365px;
-    height: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
     top: 705px;
     left: 100px;
     border: 1px;
+    margin-bottom: 20px;
   }
   #main .card .card-content .card-tags .card-tag {
-    width: 115px;
+    display: inline-flex;
     height: 25px;
-    top: 705px;
-    left: 350px;
     border: 1px;
     font-size: 14px;
     font-weight: 700;
