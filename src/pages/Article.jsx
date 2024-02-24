@@ -103,8 +103,8 @@ function Article() {
                     </div>
                     <div className="card-host">
                         <div className="card-host-name">
-                            <p>Alexandre Dumas</p>
-                            <div className="card-avatar"></div>
+                            <p>{article.host.name}</p>
+                            <img src={article.host.picture} className="card-avatar" alt={article.host.name}/>
                         </div>
                         <div className="card-rating">
                             <i className="fa-xs fa-solid fa-star" aria-hidden="true"></i>
