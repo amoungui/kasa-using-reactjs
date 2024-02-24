@@ -78,6 +78,22 @@ function Article() {
         }
     }, [article]); // Le tableau de dépendances contient article, donc l'effet sera exécuté à chaque fois que article change
 
+    useEffect(() => {
+        if (article) {
+            let tagsElements = document.getElementsByClassName('card-tags');
+            article.tags.forEach(tag => {
+                let span = document.createElement('span');
+                span.className = 'card-tag';
+                span.textContent = tag;
+                // Parcourir tous les éléments avec la classe 'card-tags' 
+                // et ajouter le span à chacun d'eux
+                Array.from(tagsElements).forEach(tagsElement => {
+                    tagsElement.appendChild(span);
+                });
+            })
+        } 
+    }, [article]);    
+    
     // Si l'article n'a pas encore été chargé, affichage d'un message de chargement
     if (!article) return 'Loading...';
 
@@ -96,9 +112,6 @@ function Article() {
                         <p className="card-title">{article.title}</p>
                         <p className="card-subtitle">{article.location}</p>
                         <div className="card-tags">
-                            <span className="card-tag">Cozy</span>
-                            <span className="card-tag">Canal</span>
-                            <span className="card-tag">Paris 10</span>
                         </div>
                     </div>
                     <div className="card-host">
