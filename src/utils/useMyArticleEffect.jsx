@@ -69,7 +69,7 @@ export function useTagsEffect(article, TagsClass, TagClass) {
     }, [article, TagsClass, TagClass]);    
 }
 
-export function useAccordionForEquipment(article, accordionClass){
+export function useAccordionForEquipmentEffect(article, accordionClass){
     useEffect(() => {
         // Vérification si l'article existe
         if (article) {
@@ -96,3 +96,40 @@ export function useAccordionForEquipment(article, accordionClass){
     }, [article, accordionClass]);    
 }
 
+export function useCardRatingEffect(article, cardRatingClass, faStarIcon, faStartGreyIcon){
+    useEffect(() => {
+        // Vérification si l'article existe
+        if (article) {
+            // Récupération de tous les éléments avec la classe 'card-rating'
+            let ratingsElements = document.getElementsByClassName(cardRatingClass);
+            // Vider le contenu de chaque élément avec la classe 'card-rating'
+            Array.from(ratingsElements).forEach(Element => {
+                Element.innerHTML = '';
+            });
+            // Définition du nombre total de notes
+            const totalRating = 5;
+            // Récupération de la note de l'article
+            let ratings = article.rating;
+            // Parcours de chaque note
+            for (let i = 0; i < totalRating; i++) {
+                // Création d'un nouvel élément i
+                let tag = document.createElement('i');
+                // Ajout de l'attribut 'aria-hidden' à l'élément i
+                tag.setAttribute("aria-hidden", true);
+                // Si la note est inférieure à la note de l'article, ajout de la classe 'fa-xs fa-solid fa-star' à l'élément i
+                if (i < ratings) {
+                    tag.className = faStarIcon;
+                } else {
+                    // Sinon, ajout de la classe 'fa-xs fa-solid fa-star fa-start-grey' à l'élément i
+                    tag.className = faStartGreyIcon;
+                }
+                // Ajout de l'élément i à chaque élément avec la classe 'card-rating'
+                Array.from(ratingsElements).forEach(Element => {
+                    Element.appendChild(tag.cloneNode(true));
+                });
+            }
+        }
+        // Le tableau de dépendances contient 'article', donc l'effet sera exécuté 
+        // à chaque fois que 'article' change
+    }, [article, cardRatingClass, faStarIcon, faStartGreyIcon]);
+}

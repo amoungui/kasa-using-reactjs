@@ -3,7 +3,12 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 // Importation de la fonction useMyAccordionEffect depuis un fichier utilitaire
 import useMyAccordionEffect from '../utils/useMyAccordionEffect';
-import { useImageSliderEffect, useTagsEffect, useAccordionForEquipment } from '../utils/useMyArticleEffect';
+import {
+    useImageSliderEffect,
+    useTagsEffect,
+    useAccordionForEquipmentEffect,
+    useCardRatingEffect
+} from '../utils/useMyArticleEffect';
 
 // Déclaration de la fonction Article
 function Article() {
@@ -11,8 +16,6 @@ function Article() {
     const { articleNumber } = useParams();
     // Déclaration d'un état pour l'article avec le hook useState
     const [article, setArticle] = useState(null);
-    // Appel de la fonction useMyAccordionEffect
-    useMyAccordionEffect();
 
     // Appel du hook useEffect pour récupérer les données de l'article depuis une API
     useEffect(() => {
@@ -24,54 +27,12 @@ function Article() {
         // donc l'effet sera exécuté à chaque fois que articleNumber change
     }, [articleNumber]);
 
+    // Appel des Hooks personnalisés
+    useMyAccordionEffect();
     useImageSliderEffect(article, 'slider-content', 'prev', 'next', 'current-slide');
     useTagsEffect(article, 'card-tags', 'card-tag');
-    useAccordionForEquipment(article, 'js-equipements-accordion-list');
-
-    // Premier useEffect
-
-    // Deuxième useEffect 
-
-
-    // Troisième useEffect
-    useEffect(() => {
-        // Vérification si l'article existe
-        if (article) {
-            // Récupération de tous les éléments avec la classe 'card-rating'
-            let ratingsElements = document.getElementsByClassName('card-rating');
-            // Vider le contenu de chaque élément avec la classe 'card-rating'
-            Array.from(ratingsElements).forEach(Element => {
-                Element.innerHTML = '';
-            });
-            // Définition du nombre total de notes
-            const totalRating = 5;
-            // Récupération de la note de l'article
-            let ratings = article.rating;
-            // Parcours de chaque note
-            for (let i = 0; i < totalRating; i++) {
-                // Création d'un nouvel élément i
-                let tag = document.createElement('i');
-                // Ajout de l'attribut 'aria-hidden' à l'élément i
-                tag.setAttribute("aria-hidden", true);
-                // Si la note est inférieure à la note de l'article, ajout de la classe 'fa-xs fa-solid fa-star' à l'élément i
-                if (i < ratings) {
-                    tag.className = "fa-xs fa-solid fa-star";
-                } else {
-                    // Sinon, ajout de la classe 'fa-xs fa-solid fa-star fa-start-grey' à l'élément i
-                    tag.className = "fa-xs fa-solid fa-star fa-start-grey";
-                }
-                // Ajout de l'élément i à chaque élément avec la classe 'card-rating'
-                Array.from(ratingsElements).forEach(Element => {
-                    Element.appendChild(tag.cloneNode(true));
-                });
-            }
-        }
-        // Le tableau de dépendances contient 'article', donc l'effet sera exécuté 
-        // à chaque fois que 'article' change
-    }, [article]);
-
-
-
+    useAccordionForEquipmentEffect(article, 'js-equipements-accordion-list');
+    useCardRatingEffect(article, 'card-rating', 'fa-xs fa-solid fa-star', 'fa-xs fa-solid fa-star fa-start-grey');
 
     // Si l'article n'a pas encore été chargé, affichage d'un message de chargement
     if (!article) return 'Loading...';
