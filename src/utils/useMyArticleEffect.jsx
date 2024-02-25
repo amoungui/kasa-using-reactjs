@@ -66,6 +66,33 @@ export function useTagsEffect(article, TagsClass, TagClass) {
         } 
     // Le tableau de dépendances contient 'article', donc l'effet sera exécuté 
     // à chaque fois que 'article' change
-    }, [article, TagsClass]);    
+    }, [article, TagsClass, TagClass]);    
+}
+
+export function useAccordionForEquipment(article, accordionClass){
+    useEffect(() => {
+        // Vérification si l'article existe
+        if (article) {
+            // Récupération de tous les éléments avec la classe 'js-equipements-accordion-list'
+            let accordionElements = document.getElementsByClassName(accordionClass);
+            // Vider le contenu de chaque élément avec la classe 'js-equipements-accordion-list'
+            Array.from(accordionElements).forEach(Element => {
+                Element.innerHTML = '';
+            });
+            // Parcours de chaque équipement de l'article
+            article.equipments.forEach(tag => {
+                // Création d'un nouvel élément li
+                let li = document.createElement('li');
+                // Ajout du texte de l'équipement à l'élément li
+                li.textContent = tag;
+                // Ajout de l'élément li à chaque élément avec la classe 'js-equipements-accordion-list'
+                Array.from(accordionElements).forEach(Element => {
+                    Element.appendChild(li);
+                });
+            })
+        }
+        // Le tableau de dépendances contient 'article', donc l'effet sera exécuté 
+        // à chaque fois que 'article' change
+    }, [article, accordionClass]);    
 }
 

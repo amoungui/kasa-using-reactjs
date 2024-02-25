@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 // Importation de la fonction useMyAccordionEffect depuis un fichier utilitaire
 import useMyAccordionEffect from '../utils/useMyAccordionEffect';
-import { useImageSliderEffect, useTagsEffect } from '../utils/useMyArticleEffect';
+import { useImageSliderEffect, useTagsEffect, useAccordionForEquipment } from '../utils/useMyArticleEffect';
 
 // Déclaration de la fonction Article
 function Article() {
@@ -26,34 +26,12 @@ function Article() {
 
     useImageSliderEffect(article, 'slider-content', 'prev', 'next', 'current-slide');
     useTagsEffect(article, 'card-tags', 'card-tag');
+    useAccordionForEquipment(article, 'js-equipements-accordion-list');
 
     // Premier useEffect
 
-    // Deuxième useEffect
-    useEffect(() => {
-        // Vérification si l'article existe
-        if (article) {
-            // Récupération de tous les éléments avec la classe 'js-equipements-accordion-list'
-            let accordionElements = document.getElementsByClassName('js-equipements-accordion-list');
-            // Vider le contenu de chaque élément avec la classe 'js-equipements-accordion-list'
-            Array.from(accordionElements).forEach(Element => {
-                Element.innerHTML = '';
-            });
-            // Parcours de chaque équipement de l'article
-            article.equipments.forEach(tag => {
-                // Création d'un nouvel élément li
-                let li = document.createElement('li');
-                // Ajout du texte de l'équipement à l'élément li
-                li.textContent = tag;
-                // Ajout de l'élément li à chaque élément avec la classe 'js-equipements-accordion-list'
-                Array.from(accordionElements).forEach(Element => {
-                    Element.appendChild(li);
-                });
-            })
-        }
-        // Le tableau de dépendances contient 'article', donc l'effet sera exécuté 
-        // à chaque fois que 'article' change
-    }, [article]);
+    // Deuxième useEffect 
+
 
     // Troisième useEffect
     useEffect(() => {
