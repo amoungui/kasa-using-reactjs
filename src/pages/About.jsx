@@ -12,7 +12,9 @@ function About() {
             <div className="apropos-cards">
                 <div className="cards">
                     <div className="accordion fiabilite-accordion">
-                        <button className="accordion-button">Fiabilité <i className="fa-solid fa-chevron-up"></i></button>
+                        <button className="accordion-button">
+                            Fiabilité <i className="fa-solid fa-chevron-up js-accordion-button"></i>
+                        </button>
                         <div className="accordion-content">
                             <ul className="accordion-list">
                                 <li>Climatisation</li>
@@ -26,7 +28,9 @@ function About() {
                         </div>
                     </div>
                     <div className="accordion respect-accordion">
-                        <button className="accordion-button">Respect <i className="fa-solid fa-chevron-up"></i></button>
+                        <button className="accordion-button">
+                            Respect <i className="fa-solid fa-chevron-up js-accordion-button"></i>
+                        </button>
                         <div className="accordion-content">
                             <ul className="accordion-list">
                                 <li>Climatisation</li>
@@ -40,7 +44,9 @@ function About() {
                         </div>
                     </div>
                     <div className="accordion service-accordion">
-                        <button className="accordion-button">Service <i className="fa-solid fa-chevron-up"></i></button>
+                        <button className="accordion-button">
+                            Service <i className="fa-solid fa-chevron-up js-accordion-button"></i>
+                        </button>
                         <div className="accordion-content">
                             <ul className="accordion-list">
                                 <li>Climatisation</li>
@@ -54,7 +60,9 @@ function About() {
                         </div>
                     </div>
                     <div className="accordion securite-accordion">
-                        <button className="accordion-button">Sécurité <i className="fa-solid fa-chevron-up"></i></button>
+                        <button className="accordion-button">
+                            Sécurité <i className="fa-solid fa-chevron-up js-accordion-button"></i>
+                        </button>
                         <div className="accordion-content">
                             <ul className="accordion-list">
                                 <li>Climatisation</li>

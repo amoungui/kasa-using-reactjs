@@ -207,7 +207,7 @@ function Article() {
                 <div className="card-accordions">
                     <div className="accordion description-accordion">
                         <button className="accordion-button">
-                            Description <i className="fa-solid fa-chevron-up"></i>
+                            Description <i className="fa-solid fa-chevron-up js-accordion-button"></i>
                         </button>
                         <div className="accordion-content">
                             {article.description}
@@ -215,7 +215,7 @@ function Article() {
                     </div>
                     <div className="accordion equipements-accordion">
                         <button className="accordion-button">
-                            Équipements <i className="fa-solid fa-chevron-up"></i>
+                            Équipements <i className="fa-solid fa-chevron-up js-accordion-button"></i>
                         </button>
                         <div className="accordion-content">
                             <ul className="accordion-list js-equipements-accordion-list">        

@@ -7,12 +7,12 @@ function useMyAccordionEffect() {
     useEffect(() => {
         // Déclaration de la fonction handleAccordionClick
         function handleAccordionClick(event) {
-            // Vérification si l'élément cliqué a la classe .accordion-button
-            if (event.target.matches('.accordion-button')) {
-                // Bascule de la classe active sur l'élément cliqué
-                event.target.classList.toggle('active');
+            // Vérification si l'élément parent du clic a la classe .accordion-button
+            if (event.target.parentElement.matches('.accordion-button')) {
+                // Bascule de la classe active sur l'élément parent du clic
+                event.target.parentElement.classList.toggle('active');
                 // Récupération de l'élément suivant dans le DOM
-                var panel = event.target.nextElementSibling;
+                var panel = event.target.parentElement.nextElementSibling;
                 // Vérification si l'élément panel a une hauteur maximale définie
                 if (panel.style.maxHeight) {
                     // Réinitialisation de la hauteur maximale
@@ -22,7 +22,7 @@ function useMyAccordionEffect() {
                     panel.style.maxHeight = panel.scrollHeight + 'px';
                 }
             }
-        }
+        }        
 
         // Ajout d'un gestionnaire d'événements de clic au document
         document.addEventListener('click', handleAccordionClick);
