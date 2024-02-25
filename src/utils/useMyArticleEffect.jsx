@@ -9,7 +9,7 @@ export function useImageSliderEffect(article, sliderContentId, prevButtonId, nex
             });
             var slidesSize = imgObjects.length;
             var currentSlide = 0;
-            var sliderContent = document.getElementById(sliderContentId); 
+            var sliderContent = document.getElementById(sliderContentId);
             imgObjects.forEach((imgObject) => {
                 let img = document.createElement('img');
                 img.src = imgObject.url;
@@ -63,13 +63,13 @@ export function useTagsEffect(article, TagsClass, TagClass) {
                     tagsElement.appendChild(span);
                 });
             })
-        } 
-    // Le tableau de dépendances contient 'article', donc l'effet sera exécuté 
-    // à chaque fois que 'article' change
-    }, [article, TagsClass, TagClass]);    
+        }
+        // Le tableau de dépendances contient 'article', donc l'effet sera exécuté 
+        // à chaque fois que 'article' change
+    }, [article, TagsClass, TagClass]);
 }
 
-export function useAccordionForEquipmentEffect(article, accordionClass){
+export function useAccordionForEquipmentEffect(article, accordionClass) {
     useEffect(() => {
         // Vérification si l'article existe
         if (article) {
@@ -93,10 +93,10 @@ export function useAccordionForEquipmentEffect(article, accordionClass){
         }
         // Le tableau de dépendances contient 'article', donc l'effet sera exécuté 
         // à chaque fois que 'article' change
-    }, [article, accordionClass]);    
+    }, [article, accordionClass]);
 }
 
-export function useCardRatingEffect(article, cardRatingClass, faStarIcon, faStartGreyIcon){
+export function useCardRatingEffect(article, cardRatingClass, faStarIcon, faStartGreyIcon) {
     useEffect(() => {
         // Vérification si l'article existe
         if (article) {
