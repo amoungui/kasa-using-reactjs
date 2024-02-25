@@ -188,7 +188,6 @@ function Article() {
                 <div className="card-content">
                     <div className="card-txt">
                         <p className="card-title">{article.title}</p>
-                        <span className="separator"></span>
                         <p className="card-subtitle">{article.location}</p>
                         <div className="card-tags">
                         </div>
