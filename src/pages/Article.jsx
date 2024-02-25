@@ -1,7 +1,7 @@
 // Importation des hooks nécessaires depuis les bibliothèques React et react-router-dom
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-// Importation de la fonction useMyAccordionEffect depuis un fichier utilitaire
+// Importation des fonctions hook personnalisés depuis un fichier utilitaire
 import useMyAccordionEffect from '../utils/useMyAccordionEffect';
 import {
     useImageSliderEffect,
