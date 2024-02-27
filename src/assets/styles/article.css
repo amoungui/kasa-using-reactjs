@@ -285,6 +285,7 @@
   #main .card-accordions {
     display: flex;
     flex-direction: column;
+    margin-top: 15px;
   }
   #main .card-accordions .accordion-button {
     border-radius: 5px;
