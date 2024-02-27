@@ -162,7 +162,7 @@
 /* Begin main style  */
 #main{
     margin: 30px;
-    height: 743px;
+    height: 85%;
     border: 1px;
 
     /* Begin article style  */
@@ -172,7 +172,7 @@
         flex-direction: column;
         gap: 10px;
         position: relative;
-        height: 700px; 
+        height: 640px; 
         border: 1px;
         border-radius: 25px;
         #slider-content {
@@ -297,11 +297,8 @@
         }
     }
     .card-accordions {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 10px; /* ajustez ceci pour changer l'espace entre les cartes */
-        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
         .accordion-button{
             border-radius: 5px;
         }
