@@ -136,11 +136,16 @@
 #main .card .card-accordions {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(1, 1fr);
   gap: 10px; /* ajustez ceci pour changer l'espace entre les cartes */
 }
 #main .card .card-accordions .accordion-button {
   border-radius: 5px;
+}
+#main .card .card-accordions .accordion {
+  flex: 1 1 auto;
+}
+#main .card .card-accordions .accordion .accordion-content {
+  height: 100%; /* changez ceci pour correspondre à la hauteur de l'accordion */
 }
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
