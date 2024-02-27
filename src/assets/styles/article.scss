@@ -1,7 +1,7 @@
 /* Begin main style  */
 #main{
     margin: 30px;
-    height: 743px;
+    height: 85%;
     border: 1px;
 
     /* Begin article style  */
@@ -135,20 +135,16 @@
                 }
             }
         }
-        .card-accordions {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px; /* ajustez ceci pour changer l'espace entre les cartes */
-            .accordion-button{
-                border-radius: 5px;
-            }
-            .accordion {
-                flex: 1 1 auto;
-                .accordion-content {
-                    height: 100%; /* changez ceci pour correspondre à la hauteur de l'accordion */
-                }
-            }
-        }        
+    }
+    .card-accordions {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 10px; /* ajustez ceci pour changer l'espace entre les cartes */
+        .accordion-button{
+            border-radius: 5px;
+
+        }
     }
     /* End banner style  */
 }
@@ -299,16 +295,15 @@
                 }                
             }
         }
-        .card-accordions {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: 10px; /* ajustez ceci pour changer l'espace entre les cartes */
-            margin-top: 10px;
-            .accordion-button{
-                border-radius: 5px;
-
-            }
+    }
+    .card-accordions {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 10px; /* ajustez ceci pour changer l'espace entre les cartes */
+        margin-top: 10px;
+        .accordion-button{
+            border-radius: 5px;
         }
     }
     /* End banner style  */

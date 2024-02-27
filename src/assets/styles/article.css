@@ -2,7 +2,7 @@
 /* Begin main style  */
 #main {
   margin: 30px;
-  height: 743px;
+  height: 85%;
   border: 1px;
   /* Begin article style  */
   /* End banner style  */
@@ -133,19 +133,14 @@
   border-radius: 4px;
   margin: 3px;
 }
-#main .card .card-accordions {
+#main .card-accordions {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
   gap: 10px; /* ajustez ceci pour changer l'espace entre les cartes */
 }
-#main .card .card-accordions .accordion-button {
+#main .card-accordions .accordion-button {
   border-radius: 5px;
-}
-#main .card .card-accordions .accordion {
-  flex: 1 1 auto;
-}
-#main .card .card-accordions .accordion .accordion-content {
-  height: 100%; /* changez ceci pour correspondre à la hauteur de l'accordion */
 }
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
@@ -287,14 +282,14 @@
     background-color: #FF6060;
     padding: 2px 15px 2px 15px;
   }
-  #main .card .card-accordions {
+  #main .card-accordions {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 10px; /* ajustez ceci pour changer l'espace entre les cartes */
     margin-top: 10px;
   }
-  #main .card .card-accordions .accordion-button {
+  #main .card-accordions .accordion-button {
     border-radius: 5px;
   }
 }/*# sourceMappingURL=article.css.map */
