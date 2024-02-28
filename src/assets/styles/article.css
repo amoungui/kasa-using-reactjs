@@ -142,6 +142,12 @@
 #main .card-accordions .accordion-button {
   border-radius: 5px;
 }
+#main .card-accordions .accordion {
+  flex: 1 1 auto;
+}
+#main .card-accordions .accordion .accordion-content {
+  height: 200px; /* changez ceci pour correspondre à la hauteur de l'accordion */
+}
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
 /****** Media queries ***********/
@@ -289,5 +295,11 @@
   }
   #main .card-accordions .accordion-button {
     border-radius: 5px;
+  }
+  #main .card-accordions .accordion {
+    flex: 1 1 auto;
+  }
+  #main .card-accordions .accordion .accordion-content {
+    height: 100%; /* changez ceci pour correspondre à la hauteur de l'accordion */
   }
 }/*# sourceMappingURL=article.css.map */
